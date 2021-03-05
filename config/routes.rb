@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   get 'friends/:id/list' => 'friends#list', :as => :friends_list
 
+  get 'friends/request/:id' => 'friends#request', :as => :friend_request
+
 end

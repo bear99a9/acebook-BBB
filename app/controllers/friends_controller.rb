@@ -4,10 +4,11 @@ class FriendsController < ApplicationController
     @friend_requests = current_user.requested_friends
   end
 
-  def request
-    current_user.friend_request(@user)
-    redirect_to friend_requests_path 
-  end
+  # def request
+  #   user = User.friendly.find(params[:id])
+  #   current_user.friend_request(user)
+  #   redirect_to friend_requests_path 
+  # end
 
   def decline
     current_user.decline_request(User.friendly.find(params[:id]))

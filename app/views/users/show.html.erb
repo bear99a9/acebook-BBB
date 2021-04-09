@@ -6,7 +6,7 @@
     <% unless current_user.friends.map{|fr| fr.id}.include?(@user.id) %>
       <% if !current_user.pending_friends.map{|fr| fr.id}.include?(@user.id) && !current_user.requested_friends.map{|fr| fr.id}.include?(@user.id) %>
         <% if current_user.id != @user.id %>
-          <p class="action-link"><%= link_to "Be my friend", current_user.friend_request(@user) %> </p>
+          <p class="action-link"><%= link_to "Be my friend", friend_request_path(@user) %> </p>
         <%end%>
       <%end%>
     <%end%>
